@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" />
+  <title>{% block title %}Timeatwork.net{% endblock %}</title>
+</head>
+
+<body>
+
+  <header>Timeatwork.net</header>
+  <nav>
+    {% block nav %}
+    <ul>
+    </ul>
+    {% endblock %}
+  </nav>
+
+  <section id="content">
+    {% block content %}{% endblock %}
+  </section>
+
+  <footer></footer>
+</body>
+</html>
