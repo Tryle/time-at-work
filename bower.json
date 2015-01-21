@@ -1,0 +1,6 @@
+{
+  "name": "time-at-work",
+  "dependencies": {
+    "bootstrap": "latest"
+  }
+}

@@ -1,5 +1,5 @@
 """
-Django settings for timeatwork project.
+Django settings for time-at-work project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -19,9 +19,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '$lhv*!4g_blkei&qav#m=6=7j#p3fdz=ze45^n@zji40wk!=4h'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# Env parameters
 DEBUG = True
-
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -36,6 +35,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'time-at-work',
     'schedule'
 )
 
@@ -49,9 +49,19 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'timeatwork.urls'
+TEMPLATE_CONTEXT_PROCESSORS = ("django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.tz",
+    "django.contrib.messages.context_processors.messages",
+    "time-at-work.context_processors.env",
+)
 
-WSGI_APPLICATION = 'timeatwork.wsgi.application'
+ROOT_URLCONF = 'time-at-work.urls'
+
+WSGI_APPLICATION = 'time-at-work.wsgi.application'
 
 
 # Database
@@ -80,14 +90,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
-
-STATIC_URL = '/web/timeatwork/static/'
+STATIC_URL = 'static/'
 
 STATICFILES_DIRS = (
-    STATIC_URL + 'assets/',
+    os.path.join(BASE_DIR, 'static'),
 )
 
 TEMPLATE_DIRS = (
-    STATIC_URL + 'templates/',
+    os.path.join(BASE_DIR, STATIC_URL + 'templates'),
 )
 APPEND_SLASH = True

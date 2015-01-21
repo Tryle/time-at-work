@@ -1,7 +1,11 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" />
+  {% ifequal ENV "dev" %}
+  <link rel="stylesheet" href="{% static 'bower-components/bootstrap/dist/css/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="{{ CSS_DIRECTORY }}style.css" />
+  {% endifequal %}
   <title>{% block title %}Timeatwork.net{% endblock %}</title>
 </head>
 
