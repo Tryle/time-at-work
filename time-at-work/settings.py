@@ -35,6 +35,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Used for debug tasks through manage.py templateshell.
+    # See https://github.com/codysoyland/django-template-repl
+    # See also http://codysoyland.com/2009/dec/13/django-template-debugging-made-easier/
+    'template_repl',
     'time-at-work',
     'schedule'
 )
@@ -56,6 +61,7 @@ TEMPLATE_CONTEXT_PROCESSORS = ("django.contrib.auth.context_processors.auth",
     "django.core.context_processors.static",
     "django.core.context_processors.tz",
     "django.contrib.messages.context_processors.messages",
+    'django.core.context_processors.request',
     "time-at-work.context_processors.env",
 )
 
