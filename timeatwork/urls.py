@@ -3,7 +3,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'time-at-work.views.home', name='home'),
+    # url(r'^$', 'timeatwork.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^', include('schedule.urls')),

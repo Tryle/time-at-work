@@ -1,5 +1,5 @@
 """
-Django settings for time-at-work project.
+Django settings for timeatwork project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     # See also http://codysoyland.com/2009/dec/13/django-template-debugging-made-easier/
     'template_repl',
 
-    'time-at-work',
+    'timeatwork',
     'schedule'
 )
 
@@ -58,12 +58,12 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.tz",
     "django.contrib.messages.context_processors.messages",
     'django.core.context_processors.request',
-    "time-at-work.context_processors.env",
+    "timeatwork.context_processors.env",
 )
 
-ROOT_URLCONF = 'time-at-work.urls'
+ROOT_URLCONF = 'timeatwork.urls'
 
-WSGI_APPLICATION = 'time-at-work.wsgi.application'
+WSGI_APPLICATION = 'timeatwork.wsgi.application'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/

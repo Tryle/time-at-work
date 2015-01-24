@@ -1,5 +1,5 @@
 {
-  "name": "time-at-work",
+  "name": "timeatwork",
   "dependencies": {
     "bootstrap": "latest"
   }
